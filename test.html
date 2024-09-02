@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Makeup Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+        }
+        header .social-links {
+            margin-top: 15px;
+        }
+        .social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+} header .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #666;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .about-me p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact button {
+            padding: 10px;
+            border: none;
+            background-color: #444;
+            color: #fff;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+            color: #777;
+        }
+        header {
+    position: relative;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: gold;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle-animation 2s infinite;
+}
+
+@keyframes sparkle-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(2) translate(30px, -30px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translate(-50px, 50px);
+    }
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+html {
+    scroll-behavior: smooth;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #444;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    animation: pulse 2s infinite;
+}
+
+h2 {
+    animation: pulse 2s infinite;
+    animation-delay: 1s;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px; /* Adds spacing between sections */
+}
+
+.about-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-text p {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Ensure the layout looks good on smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-bottom: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Page Title and Social Media Links -->
+    <header>
+        <h1>Isiroda Makeup</h1>
+        <div class="social-links">
+            <a href="https://www.instagram.com/isiroda.makeup" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565422377189" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="about-me fade-in">
+        <h2>O Meni</h2>
+        <div class="about-content">
+            <img src="Slike/Ja.jpeg" alt="My picture" class="about-image">
+            <div class="about-text">
+                <p>
+                    Dobrodošli! Ja sam profesionalni šminker sa iskustvom u bridal šminkanju, šminkanju za posebne prilike, kao i šminke koja izgleda prirodno i može se nositi za svakodnevne prilike ili profesionalne događaje. 
+                    Moja strast je da naglasim Vašu prirodnu lepotu i našminkati Vas tako da se osećate zanosno i samouvereno! 
+                    Bilo da ste buduća mlada, ili želite da izgledate najbolje za svoju specijalnu priliku - tu sam da pomognem.
+                </p>
+            </div>
+        </div>
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Welcome! I am a professional makeup artist with experience in bridal, special events, and everyday makeup. 
+                    My passion is to enhance natural beauty and create stunning looks that make my clients feel confident and beautiful. 
+                    Whether you are a bride-to-be or just want to look your best for a special occasion, I’m here to help.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery fade-in">
+        <h2>Gallery</h2>
+        <!-- Example images; replace with your own work -->
+        <img src="Slike/1.jpeg" alt="Makeup Look 1">
+        <img src="Slike/2.jpeg" alt="Makeup Look 2">
+        <img src="Slike/6.jpg">
+        <img src="Slike/8.jpg" alt="Makeup Look 4">
+        <img src="Slike/7.jpg">
+        <img src="Slike/9.jpeg">
+        <img src="Slike/10.jpeg">
+        <img src="Slike/4.jpeg">
+        <img src="Slike/5.jpeg">
+        <img src="Slike/3.jpeg" alt="Makeup Look 3">
+        <!-- Add more images as needed -->
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in">
+        <h2>Kontaktirajte me za više informacija ili za kolaboracije:</h2>
+        <h2>Contact me for more information or collabs:</h2>
+        <form action="https://formspree.io/f/mdknjknj" method="POST">
+            <input type="text" name="name/ime" placeholder="Ime / Your Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="5" placeholder="Tvoja Poruka / Your Message" required></textarea>
+            <button type="submit">Pošalji / Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2024 Isiroda Makeup. All Rights Reserved.
+    </footer>
+    <script>
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            const header = document.querySelector('header');
+            header.appendChild(sparkle);
+    
+            const x = Math.random() * header.clientWidth;
+            const y = Math.random() * header.clientHeight;
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+    
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+    
+        setInterval(createSparkle, 500);
+    </script>
+    <script>
+        document.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.fade-in');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    elements.forEach(function(element) {
+        const elementTop = element.getBoundingClientRect().top + scrollTop;
+
+        if (scrollTop + window.innerHeight > elementTop + 100) {
+            element.classList.add('visible');
+        }
+    });
+});
+    </script>
+    <script>
+        const backToTopButton = document.createElement('div');
+backToTopButton.id = 'back-to-top';
+backToTopButton.innerText = '↑ Back to Top';
+document.body.appendChild(backToTopButton);
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
+});
+
+backToTopButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+    </script>
+</body>
+</html>
