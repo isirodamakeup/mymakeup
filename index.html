@@ -18,6 +18,21 @@
             background-color: #fff;
             border-bottom: 1px solid #ddd;
         }
+        .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+        .contact-info {
+    margin-right: 20px;
+    text-align: right;
+    font-size: 14px;
+}
+        .contact-info p {
+    margin: 0;
+    color: #333;
+}
+
         header h1 {
             font-size: 2.5em;
             margin: 0;
@@ -26,11 +41,9 @@
         header .social-links {
             margin-top: 15px;
         }
-        .social-links {
-    margin-top: 15px;
+      .social-links {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .social-links a {
@@ -44,10 +57,10 @@
 }
 
 .social-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-} header .social-links a {
+    width: 24px;
+    height: 24px;
+}
+    header .social-links a {
             margin: 0 10px;
             text-decoration: none;
             color: #666;
@@ -238,11 +251,13 @@ h2 {
     <!-- Page Title and Social Media Links -->
     <header>
         <h1>Isiroda Makeup</h1>
+         <div class="header-right">
                 <div class="contact-info">
             <p>Kontakt telefon: +381631711574</p>
             <p>Adresa: 12000 Pozarevac</p>
             <p>Address: 36100 Vicenza</p>
         </div>
+         </div>
         <div class="social-links">
             <a href="https://www.instagram.com/isiroda.makeup" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
