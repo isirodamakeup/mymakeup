@@ -147,6 +147,12 @@
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+        .scheduling-button {
+    display: block;
+    margin: 30px auto 0;  /* Adjusts the space above the calendar button */
+    text-align: center;
+}
         
 .sparkle {
     position: absolute;
@@ -324,6 +330,7 @@ h2 {
         </div>
     </div>
         <!-- Google Calendar Appointment Scheduling begin -->
+<div class="scheduling-button">
 <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 <script>
@@ -341,7 +348,8 @@ h2 {
 </script>
 <!-- end Google Calendar Appointment Scheduling -->
     </section>
-
+</div>
+    
     <!-- Gallery Section -->
     <section class="gallery fade-in">
         <h2>Gallery</h2>
