@@ -8,6 +8,10 @@
     <meta name="author" content="Isiroda Makeup">
     <title>Isiroda Makeup | Profesionalno šminkanje</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg">
+    <link rel="apple-touch-icon" href="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -48,13 +52,13 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
         .header.scrolled {
-            padding: 15px 0;
+            padding: 10px 0;
             background: #fff;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
@@ -65,8 +69,24 @@
             align-items: center;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .logo img {
+            height: 45px;
+        }
+
         .logo h1 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             letter-spacing: 1px;
         }
@@ -74,6 +94,9 @@
         .logo a {
             text-decoration: none;
             color: #2c2c2c;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .nav-links {
@@ -453,6 +476,15 @@
         .footer-col h4 {
             margin-bottom: 20px;
             font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col h4 img {
+            height: 30px;
+            width: auto;
+            border-radius: 5px;
         }
 
         .footer-col p {
@@ -543,6 +575,10 @@
                 gap: 30px;
             }
 
+            .footer-col h4 {
+                justify-content: center;
+            }
+
             .certifications-section {
                 padding: 40px 20px;
             }
@@ -559,10 +595,10 @@
 
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 80px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 70px);
+                height: calc(100vh - 80px);
                 background: #fff;
                 flex-direction: column;
                 align-items: center;
@@ -591,6 +627,14 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .header.scrolled .logo img {
+                height: 35px;
+            }
         }
     </style>
 </head>
@@ -600,7 +644,10 @@
     <header class="header" id="header">
         <div class="container">
             <div class="logo">
-                <h1><a href="#">Isiroda Makeup</a></h1>
+                <a href="#">
+                    <img src="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg" alt="Isiroda Makeup Logo">
+                    <h1>Isiroda Makeup</h1>
+                </a>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -686,7 +733,7 @@
         </div>
     </section>
 
-<!-- Gallery Section -->
+    <!-- Gallery Section -->
     <section class="section section-light" id="gallery">
         <div class="container">
             <h2 class="section-title">Galerija radova</h2>
@@ -724,9 +771,21 @@
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
+                    <img src="Slike/5.jpeg" alt="Specijalne prilike">
+                    <div class="gallery-overlay">
+                        <p>Specijalne prilike</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
                     <img src="Slike/6.jpg" alt="Elegantni stil">
                     <div class="gallery-overlay">
                         <p>Elegantni stil</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="Slike/8.jpg" alt="Moderna šminka">
+                    <div class="gallery-overlay">
+                        <p>Moderna šminka</p>
                     </div>
                 </div>
             </div>
@@ -743,6 +802,7 @@
                 <div class="contact-info fade-in">
                     <h3>Kontakt informacije</h3>
                     <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +381 63 171 1574</p>
                         <p><i class="fas fa-map-marker-alt"></i> 12000 Požarevac, Srbija</p>
                         <p><i class="fas fa-map-marker-alt"></i> 36100 Vicenza, Italija</p>
                         <p><i class="fas fa-envelope"></i> isiroda.makeup@gmail.com</p>
@@ -770,7 +830,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Isiroda Makeup</h4>
+                    <h4><img src="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg" alt="Isiroda Makeup Logo" style="height: 30px;"> Isiroda Makeup</h4>
                     <p>Profesionalno šminkanje za sve vaše posebne trenutke. Učinite svoj dan nezaboravnim sa savršenim izgledom.</p>
                 </div>
                 <div class="footer-col">
