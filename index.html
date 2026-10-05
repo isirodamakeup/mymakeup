@@ -7,23 +7,15 @@
     <meta name="keywords" content="šminker, profesionalno šminkanje, bridal makeup, Požarevac, Vicenza">
     <meta name="author" content="Isiroda Makeup">
     <title>Isiroda Makeup | Profesionalno šminkanje</title>
-    
-    <!-- Favicon -->
+
     <link rel="icon" type="image/jpeg" href="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg">
     <link rel="apple-touch-icon" href="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg">
-    
-    <!-- Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -37,696 +29,280 @@
             font-weight: 500;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header & Navigation */
+        /* Header */
         .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: fixed; top: 0; left: 0; width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
+            z-index: 1000; padding: 15px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
+        .header.scrolled { padding: 10px 0; background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
 
-        .header.scrolled {
-            padding: 10px 0;
-            background: #fff;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 50px; width: auto; transition: all 0.3s ease; }
+        .header.scrolled .logo img { height: 45px; }
+        .logo h1 { font-size: 22px; font-weight: 600; letter-spacing: 1px; }
+        .logo a { text-decoration: none; color: #2c2c2c; display: flex; align-items: center; gap: 12px; }
 
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled .logo img {
-            height: 45px;
-        }
-
-        .logo h1 {
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .logo a {
-            text-decoration: none;
-            color: #2c2c2c;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
+        .nav-links { display: flex; gap: 40px; list-style: none; }
         .nav-links a {
-            text-decoration: none;
-            color: #2c2c2c;
-            font-weight: 500;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            text-decoration: none; color: #2c2c2c; font-weight: 500;
+            font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
             transition: color 0.3s ease;
         }
+        .nav-links a:hover { color: #d4af7a; }
 
-        .nav-links a:hover {
-            color: #d4af7a;
-        }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Slike/IMG_1446.jpg');
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Slike/IMG_1446.jpg');
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            margin-top: 0;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: #fff;
         }
-
-        .hero-content h1 {
-            font-size: 64px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
-
+        .hero-content h1 { font-size: 64px; font-weight: 700; margin-bottom: 20px; animation: fadeInUp 1s ease; }
         .hero-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 18px; margin-bottom: 30px;
             animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            opacity: 0; animation-fill-mode: forwards;
         }
 
         .btn {
-            display: inline-block;
-            padding: 14px 40px;
-            background: #d4af7a;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
+            display: inline-block; padding: 14px 40px;
+            background: #d4af7a; color: #fff; text-decoration: none;
+            font-weight: 600; letter-spacing: 1px;
+            transition: all 0.3s ease; border: none; cursor: pointer;
+            font-size: 14px; text-transform: uppercase;
             animation: fadeInUp 1s ease 0.4s forwards;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            opacity: 0; animation-fill-mode: forwards;
         }
+        .btn:hover { background: #b88d4a; transform: translateY(-2px); }
 
-        .btn:hover {
-            background: #b88d4a;
-            transform: translateY(-2px);
-        }
+        /* Sections */
+        .section { padding: 100px 0; }
+        .section-light { background-color: #faf9f8; }
+        .section-title { text-align: center; font-size: 42px; margin-bottom: 15px; color: #2c2c2c; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 60px; font-size: 18px; }
 
-        /* Section Styles */
-        .section {
-            padding: 100px 0;
-        }
+        /* About */
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-content p { margin-bottom: 25px; color: #555; font-size: 16px; line-height: 1.8; }
 
-        .section-light {
-            background-color: #faf9f8;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            margin-bottom: 15px;
-            color: #2c2c2c;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 60px;
-            font-size: 18px;
-        }
-
-        /* About Section - Centered Text */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            margin-bottom: 25px;
-            color: #555;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        /* Certifications - Enhanced */
+        /* Certifications */
         .certifications-section {
             background: linear-gradient(135deg, #faf9f8 0%, #fff 100%);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-top: 60px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border-radius: 20px; padding: 60px 40px; margin-top: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
         }
-
-        .certs-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
+        .certs-header { text-align: center; margin-bottom: 50px; }
         .certs-header h3 {
-            font-size: 32px;
-            color: #2c2c2c;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
+            font-size: 32px; color: #2c2c2c; margin-bottom: 15px;
+            position: relative; display: inline-block;
         }
-
         .certs-header h3:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: #d4af7a;
+            content: ''; position: absolute; bottom: -10px; left: 50%;
+            transform: translateX(-50%); width: 60px; height: 3px; background: #d4af7a;
         }
-
-        .certs-header p {
-            color: #666;
-            font-size: 16px;
-            margin-top: 20px;
-        }
+        .certs-header p { color: #666; font-size: 16px; margin-top: 20px; }
 
         .certs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
+            gap: 40px; max-width: 900px; margin: 0 auto;
         }
-
         .cert-card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
+            background: #fff; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease; position: relative;
         }
-
-        .cert-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
-        }
-
+        .cert-card:hover { transform: translateY(-10px); box-shadow: 0 25px 45px rgba(0,0,0,0.12); }
         .cert-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
             background: linear-gradient(90deg, #d4af7a, #f3e0b0);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transform: scaleX(0); transition: transform 0.4s ease;
         }
-
-        .cert-card:hover:before {
-            transform: scaleX(1);
-        }
-
+        .cert-card:hover:before { transform: scaleX(1); }
         .cert-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
+            width: 100%; height: 280px; object-fit: cover;
             transition: transform 0.5s ease;
         }
-
-        .cert-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .cert-info {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .cert-info h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #2c2c2c;
-        }
-
-        .cert-info p {
-            color: #777;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
+        .cert-card:hover img { transform: scale(1.05); }
+        .cert-info { padding: 25px; text-align: center; }
+        .cert-info h3 { font-size: 20px; margin-bottom: 12px; color: #2c2c2c; }
+        .cert-info p { color: #777; font-size: 14px; line-height: 1.6; }
         .cert-icon {
-            width: 50px;
-            height: 50px;
-            background: #d4af7a20;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: -25px auto 15px;
-            position: relative;
-            z-index: 2;
+            width: 50px; height: 50px; background: #d4af7a20; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: -25px auto 15px; position: relative; z-index: 2;
         }
-
-        .cert-icon i {
-            font-size: 24px;
-            color: #d4af7a;
-        }
+        .cert-icon i { font-size: 24px; color: #d4af7a; }
 
         /* Gallery */
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1446.jpg">
-                <img src="Slike/IMG_1446.jpg" alt="Clean Girl Makeup">
-         <div class="gallery-overlay"><p>Clean Girl Makeup</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1453.jpg">
-                <img src="Slike/IMG_1453.jpg" alt="Clean Girl Makeup">
-            <div class="gallery-overlay"><p>Clean Girl Makeup</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1501.jpg">
-                <img src="Slike/IMG_1501.jpg" alt="Soft Glam">
-            <div class="gallery-overlay"><p>Soft Glam</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1582.jpg">
-                <img src="Slike/IMG_1582.jpg" alt="Eyeliner">
-            <div class="gallery-overlay"><p>Eyeliner</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1652.jpg">
-                <img src="Slike/IMG_1652.jpg" alt="Blended Eyeliner">
-            <div class="gallery-overlay"><p>Blended Eyeliner</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1761.jpg">
-                <img src="Slike/IMG_1761.jpg" alt="Latte Makeup">
-            <div class="gallery-overlay"><p>Latte Makeup</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1768.jpg">
-                <img src="Slike/IMG_1768.jpg" alt="Latte Makeup">
-            <div class="gallery-overlay"><p>Latte Makeup</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1873.jpg">
-                <img src="Slike/IMG_1873.jpg" alt="Full Glam">
-            <div class="gallery-overlay"><p>Full Glam</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2156.jpg">
-                <img src="Slike/IMG_2156.jpg" alt="Red Lip">
-            <div class="gallery-overlay"><p>Red Lip</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2294.jpg">
-                <img src="Slike/IMG_2294.jpg" alt="Cat Eye">
-            <div class="gallery-overlay"><p>Cat Eye</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2388.jpg">
-                <img src="Slike/IMG_2388.jpg" alt="Bridal">
-            <div class="gallery-overlay"><p>Bridal</p></div>
-        </div>
-            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2415.jpg">
-                <img src="Slike/IMG_2415.jpg" alt="Bridal">
-            <div class="gallery-overlay"><p>Bridal</p></div>
-        </div>
-    </div>
-
-        /* Contact Section */
-        .contact-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .contact-details {
-            margin: 30px 0;
-        }
-
-        .contact-details p {
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-details i {
-            width: 30px;
-            color: #d4af7a;
-            font-size: 20px;
-        }
-
-        .social-links {
-            display: flex;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
+        .gallery-item {
+            position: relative; overflow: hidden;
+            border-radius: 10px; cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%; height: 300px; object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; bottom: -100%; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 20px; transition: bottom 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay { bottom: 0; }
+        .gallery-overlay p { color: #fff; }
 
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h3 { font-size: 24px; margin-bottom: 20px; }
+        .contact-details { margin: 30px 0; }
+        .contact-details p { margin: 15px 0; display: flex; align-items: center; gap: 15px; }
+        .contact-details i { width: 30px; color: #d4af7a; font-size: 20px; }
+        .social-links { display: flex; gap: 20px; margin-top: 30px; }
         .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: #f0f0f0;
-            color: #2c2c2c;
-            transition: all 0.3s ease;
-            font-size: 20px;
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 45px; height: 45px; border-radius: 50%;
+            background: #f0f0f0; color: #2c2c2c;
+            transition: all 0.3s ease; font-size: 20px;
         }
-
-        .social-links a:hover {
-            background: #d4af7a;
-            color: #fff;
-            transform: translateY(-3px);
-        }
+        .social-links a:hover { background: #d4af7a; color: #fff; transform: translateY(-3px); }
 
         .contact-form input,
         .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
+            width: 100%; padding: 12px 15px; margin-bottom: 20px;
+            border: 1px solid #e0e0e0; border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
             transition: border-color 0.3s ease;
         }
-
         .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #d4af7a;
-        }
+        .contact-form textarea:focus { outline: none; border-color: #d4af7a; }
+        .contact-form textarea { height: 120px; resize: vertical; }
 
-        .contact-form textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* Scheduling Button */
-        .scheduling-wrapper {
-            text-align: center;
-            margin: 40px 0;
-        }
+        .scheduling-wrapper { text-align: center; margin: 40px 0; }
 
         /* Footer */
-        .footer {
-            background: #2c2c2c;
-            color: #fff;
-            padding: 60px 0 30px;
-        }
-
+        .footer { background: #2c2c2c; color: #fff; padding: 60px 0 30px; }
         .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 40px; margin-bottom: 40px;
         }
-
         .footer-col h4 {
-            margin-bottom: 20px;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 20px; font-size: 18px;
+            display: flex; align-items: center; gap: 10px;
         }
-
-        .footer-col h4 img {
-            height: 30px;
-            width: auto;
-            border-radius: 5px;
-        }
-
-        .footer-col p {
-            color: #aaa;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
+        .footer-col h4 img { height: 30px; width: auto; border-radius: 5px; }
+        .footer-col p { color: #aaa; font-size: 14px; line-height: 1.8; }
         .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 14px;
+            text-align: center; padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa; font-size: 14px;
         }
 
-        /* Back to Top */
+        /* Back to top */
         .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #d4af7a;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px; background: #d4af7a; color: #fff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; opacity: 0; visibility: hidden;
+            transition: all 0.3s ease; z-index: 999;
         }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: #b88d4a;
-            transform: translateY(-5px);
-        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: #b88d4a; transform: translateY(-5px); }
 
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 0; transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Lightbox */
+        .lightbox {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.92); z-index: 10000;
+            align-items: center; justify-content: center;
+            padding: 40px; cursor: zoom-out;
+            opacity: 0; transition: opacity 0.3s ease;
         }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img {
+            max-width: 100%; max-height: 100%; object-fit: contain;
+            border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transform: scale(0.9); transition: transform 0.3s ease;
+        }
+        .lightbox.active img { transform: scale(1); }
+        .lightbox-close {
+            position: absolute; top: 20px; right: 30px;
+            color: #fff; font-size: 40px; cursor: pointer;
+            line-height: 1; background: none; border: none;
+            transition: transform 0.3s ease;
+        }
+        .lightbox-close:hover { transform: rotate(90deg) scale(1.1); }
+        .lightbox-nav {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: #fff; font-size: 40px;
+            background: rgba(255,255,255,0.1); border: none;
+            width: 55px; height: 55px; border-radius: 50%;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: background 0.3s ease;
+        }
+        .lightbox-nav:hover { background: rgba(212, 175, 122, 0.8); }
+        .lightbox-prev { left: 25px; }
+        .lightbox-next { right: 25px; }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-content h1 {
-                font-size: 48px;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 30px;
-            }
-
-            .footer-col h4 {
-                justify-content: center;
-            }
-
-            .certifications-section {
-                padding: 40px 20px;
-            }
-
-            .certs-header h3 {
-                font-size: 28px;
-            }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content h1 { font-size: 48px; }
+            .section-title { font-size: 36px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .footer-col h4 { justify-content: center; }
+            .certifications-section { padding: 40px 20px; }
+            .certs-header h3 { font-size: 28px; }
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
+            .menu-toggle { display: block; }
             .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: #fff;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: left 0.3s ease;
-                gap: 30px;
+                position: fixed; top: 80px; left: -100%;
+                width: 100%; height: calc(100vh - 80px);
+                background: #fff; flex-direction: column;
+                align-items: center; justify-content: center;
+                transition: left 0.3s ease; gap: 30px;
             }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .hero-content h1 {
-                font-size: 36px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-
-            .certs-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .logo img {
-                height: 40px;
-            }
-
-            .header.scrolled .logo img {
-                height: 35px;
-            }
+            .nav-links.active { left: 0; }
+            .hero-content h1 { font-size: 36px; }
+            .section { padding: 60px 0; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .certs-grid { grid-template-columns: 1fr; gap: 30px; }
+            .logo img { height: 40px; }
+            .header.scrolled .logo img { height: 35px; }
+            .lightbox { padding: 15px; }
+            .lightbox-close { top: 10px; right: 15px; font-size: 32px; }
+            .lightbox-nav { width: 42px; height: 42px; font-size: 28px; }
+            .lightbox-prev { left: 8px; }
+            .lightbox-next { right: 8px; }
         }
-        /* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.92);
-    z-index: 10000;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    cursor: zoom-out;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.lightbox.active {
-    display: flex;
-    opacity: 1;
-}
-.lightbox img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-.lightbox.active img {
-    transform: scale(1);
-}
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    cursor: pointer;
-    line-height: 1;
-    background: none;
-    border: none;
-    transition: transform 0.3s ease;
-}
-.lightbox-close:hover {
-    transform: rotate(90deg) scale(1.1);
-}
-.lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 40px;
-    background: rgba(255,255,255,0.1);
-    border: none;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-}
-.lightbox-nav:hover {
-    background: rgba(212, 175, 122, 0.8);
-}
-.lightbox-prev { left: 25px; }
-.lightbox-next { right: 25px; }
-
-/* Kursor za klikabilne slike */
-.gallery-item, .cert-card { cursor: pointer; }
-
-@media (max-width: 768px) {
-    .lightbox { padding: 15px; }
-    .lightbox-close { top: 10px; right: 15px; font-size: 32px; }
-    .lightbox-nav { width: 42px; height: 42px; font-size: 28px; }
-    .lightbox-prev { left: 8px; }
-    .lightbox-next { right: 8px; }
-}
     </style>
 </head>
 <body>
@@ -735,7 +311,7 @@
     <header class="header" id="header">
         <div class="container">
             <div class="logo">
-                <a href="#">
+                <a href="#home">
                     <img src="Slike/WhatsApp Image 2024-10-26 at 19.07.05.jpeg" alt="Isiroda Makeup Logo">
                     <h1>Isiroda Makeup</h1>
                 </a>
@@ -752,7 +328,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Isiroda Makeup</h1>
@@ -761,45 +337,45 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-title">O meni</h2>
             <p class="section-subtitle">Umetnost koja ističe vašu prirodnu lepotu</p>
-            
+
             <div class="about-content fade-in">
                 <p>Dobrodošli! Ja sam profesionalni šminker sa iskustvom u bridal šminkanju i šminkanju za posebne prilike. Moja specijalnost je šminka prirodnog izgleda koja se može nositi za svakodnevne prilike ili profesionalne događaje.</p>
                 <p>Moja strast je da naglasim vašu prirodnu lepotu i našminkati vas tako da se osećate zanosno i samouvereno. Bilo da ste buduća mlada, ili želite da izgledate najbolje za svoju specijalnu priliku - tu sam za vas.</p>
                 <p><strong>Welcome!</strong> I am a professional makeup artist with experience in bridal, special events, and everyday makeup. My passion is to enhance natural beauty and create stunning looks that make my clients feel confident and beautiful.</p>
             </div>
 
-            <!-- Certifications - Enhanced Section -->
+            <!-- Certifications -->
             <div class="certifications-section fade-in">
                 <div class="certs-header">
                     <h3>Sertifikati</h3>
                     <p>Profesionalna priznanja koja garantuju vrhunski kvalitet usluge</p>
                 </div>
                 <div class="certs-grid">
-                   <div class="cert-card" data-lightbox="Slike/Sertifikat1.jpeg">
-    <div class="cert-icon"><i class="fas fa-gem"></i></div>
-    <img src="Slike/Sertifikat1.jpeg" alt="Bridal Makeup Certification">
-    <div class="cert-info">
-        <h3>Bridal Makeup Master</h3>
-        <p>Specijalizacija za venčanja i svečane prilike - sertifikovani ekspert za savršen izgled mlade</p>
-    </div>
-</div>
-<div class="cert-card" data-lightbox="Slike/Sertifikat2.jpeg">
-    <div class="cert-icon"><i class="fas fa-star"></i></div>
-    <img src="Slike/Sertifikat2.jpeg" alt="Professional Makeup Certification">
-    <div class="cert-info">
-        <h3>Professional Makeup Artist</h3>
-        <p>Napredne tehnike profesionalnog šminkanja i vrhunski pristup svakom klijentu</p>
-    </div>
-</div>
+                    <div class="cert-card" data-lightbox="Slike/Sertifikat1.jpeg">
+                        <div class="cert-icon"><i class="fas fa-gem"></i></div>
+                        <img src="Slike/Sertifikat1.jpeg" alt="Bridal Makeup Certification">
+                        <div class="cert-info">
+                            <h3>Bridal Makeup Master</h3>
+                            <p>Specijalizacija za venčanja i svečane prilike - sertifikovani ekspert za savršen izgled mlade</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" data-lightbox="Slike/Sertifikat2.jpeg">
+                        <div class="cert-icon"><i class="fas fa-star"></i></div>
+                        <img src="Slike/Sertifikat2.jpeg" alt="Professional Makeup Certification">
+                        <div class="cert-info">
+                            <h3>Professional Makeup Artist</h3>
+                            <p>Napredne tehnike profesionalnog šminkanja i vrhunski pristup svakom klijentu</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Scheduling Button -->
+            <!-- Scheduling -->
             <div class="scheduling-wrapper">
                 <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
                 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
@@ -820,65 +396,71 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery -->
     <section class="section section-light" id="gallery">
         <div class="container">
             <h2 class="section-title">Galerija radova</h2>
             <p class="section-subtitle">Pogledajte neke od mojih najdražih kreacija</p>
-            
+
             <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <img src="Slike/D62C04B0-65E9-4B46-B1A1-D5614D185DFC.JPG" alt="Večernja šminka">
-                    <div class="gallery-overlay">
-                        <p>Večernja šminka</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1446.jpg">
+                    <img src="Slike/IMG_1446.jpg" alt="Clean Girl Makeup">
+                    <div class="gallery-overlay"><p>Clean Girl Makeup</p></div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="Slike/472785322_122132763350514079_8082617206041731636_n.jpg" alt="Bridal makeup">
-                    <div class="gallery-overlay">
-                        <p>Bridal makeup</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1453.jpg">
+                    <img src="Slike/IMG_1453.jpg" alt="Clean Girl Makeup">
+                    <div class="gallery-overlay"><p>Clean Girl Makeup</p></div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="Slike/bridal.JPG" alt="Bridal glam">
-                    <div class="gallery-overlay">
-                        <p>Bridal glam</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1501.jpg">
+                    <img src="Slike/IMG_1501.jpg" alt="Soft Glam">
+                    <div class="gallery-overlay"><p>Soft Glam</p></div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="Slike/1000058286.JPG" alt="Profesionalna šminka">
-                    <div class="gallery-overlay">
-                        <p>Profesionalni izgled</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1582.jpg">
+                    <img src="Slike/IMG_1582.jpg" alt="Eyeliner">
+                    <div class="gallery-overlay"><p>Eyeliner</p></div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="Slike/PXL_20241226_105328808.jpg" alt="Prirodna šminka">
-                    <div class="gallery-overlay">
-                        <p>Prirodni glamur</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1652.jpg">
+                    <img src="Slike/IMG_1652.jpg" alt="Blended Eyeliner">
+                    <div class="gallery-overlay"><p>Blended Eyeliner</p></div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="Slike/6.jpg" alt="Elegantni stil">
-                    <div class="gallery-overlay">
-                        <p>Elegantni stil</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1761.jpg">
+                    <img src="Slike/IMG_1761.jpg" alt="Latte Makeup">
+                    <div class="gallery-overlay"><p>Latte Makeup</p></div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="Slike/8.jpg" alt="Moderna šminka">
-                    <div class="gallery-overlay">
-                        <p>Moderna šminka</p>
-                    </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1768.jpg">
+                    <img src="Slike/IMG_1768.jpg" alt="Latte Makeup">
+                    <div class="gallery-overlay"><p>Latte Makeup</p></div>
+                </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1873.jpg">
+                    <img src="Slike/IMG_1873.jpg" alt="Full Glam">
+                    <div class="gallery-overlay"><p>Full Glam</p></div>
+                </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2156.jpg">
+                    <img src="Slike/IMG_2156.jpg" alt="Red Lip">
+                    <div class="gallery-overlay"><p>Red Lip</p></div>
+                </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2294.jpg">
+                    <img src="Slike/IMG_2294.jpg" alt="Cat Eye">
+                    <div class="gallery-overlay"><p>Cat Eye</p></div>
+                </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2388.jpg">
+                    <img src="Slike/IMG_2388.jpg" alt="Bridal">
+                    <div class="gallery-overlay"><p>Bridal</p></div>
+                </div>
+                <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2415.jpg">
+                    <img src="Slike/IMG_2415.jpg" alt="Bridal">
+                    <div class="gallery-overlay"><p>Bridal</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="section" id="contact">
         <div class="container">
             <h2 class="section-title">Kontaktirajte me</h2>
             <p class="section-subtitle">Zakažite termin ili postavite pitanje</p>
-            
+
             <div class="contact-grid">
                 <div class="contact-info fade-in">
                     <h3>Kontakt informacije</h3>
@@ -892,7 +474,7 @@
                         <a href="https://www.facebook.com/profile.php?id=61565422377189" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="contact-form fade-in">
                     <form action="https://formspree.io/f/mdknjknj" method="POST">
                         <input type="text" name="name" placeholder="Vaše ime" required>
@@ -931,139 +513,114 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- Back to top -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Zatvori">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Prethodna">&#10094;</button>
+        <img src="" alt="" id="lightboxImg">
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Sledeća">&#10095;</button>
+    </div>
+
     <script>
-        // Mobile Menu Toggle
+        // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
         });
 
-        // Header scroll effect
+        // Header scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 100);
         });
 
-        // Fade-in animation on scroll
+        // Fade-in on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-        
         fadeElements.forEach(el => observer.observe(el));
 
-        // Back to top button
+        // Back to top
         const backToTop = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
+            backToTop.classList.toggle('visible', window.scrollY > 300);
         });
-        
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
-        <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Zatvori">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Prethodna">&#10094;</button>
-    <img src="" alt="" id="lightboxImg">
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Sledeća">&#10095;</button>
-</div>
+
         // ===== Lightbox =====
-(function() {
-    const items = Array.from(document.querySelectorAll('[data-lightbox]'));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('lightboxClose');
-    const prevBtn = document.getElementById('lightboxPrev');
-    const nextBtn = document.getElementById('lightboxNext');
-    let currentIndex = 0;
+        (function() {
+            const items = Array.from(document.querySelectorAll('[data-lightbox]'));
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const closeBtn = document.getElementById('lightboxClose');
+            const prevBtn = document.getElementById('lightboxPrev');
+            const nextBtn = document.getElementById('lightboxNext');
+            let currentIndex = 0;
 
-    function openLightbox(index) {
-        currentIndex = index;
-        lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
-        lightboxImg.alt = items[currentIndex].querySelector('img')?.alt || '';
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+            function openLightbox(index) {
+                currentIndex = index;
+                lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
+                const innerImg = items[currentIndex].querySelector('img');
+                lightboxImg.alt = innerImg ? innerImg.alt : '';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
+            }
+            function showNext() {
+                currentIndex = (currentIndex + 1) % items.length;
+                lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
+            }
 
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+            items.forEach((item, i) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openLightbox(i);
+                });
+            });
 
-    function showPrev() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
-    }
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-    function showNext() {
-        currentIndex = (currentIndex + 1) % items.length;
-        lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
-    }
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
 
-    items.forEach((item, i) => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            openLightbox(i);
-        });
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
-
-    // Klik na pozadinu zatvara
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
-
-    // Tastatura
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showPrev();
-        if (e.key === 'ArrowRight') showNext();
-    });
-})();
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
+            });
+        })();
     </script>
 </body>
 </html>
