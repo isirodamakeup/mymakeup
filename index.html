@@ -128,7 +128,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1596704017254-9b121068fb31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Slike/IMG_1446.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -339,43 +339,56 @@
         }
 
         /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            padding: 20px;
-            transition: bottom 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            bottom: 0;
-        }
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1446.jpg">
+                <img src="Slike/IMG_1446.jpg" alt="Clean Girl Makeup">
+         <div class="gallery-overlay"><p>Clean Girl Makeup</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1453.jpg">
+                <img src="Slike/IMG_1453.jpg" alt="Clean Girl Makeup">
+            <div class="gallery-overlay"><p>Clean Girl Makeup</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1501.jpg">
+                <img src="Slike/IMG_1501.jpg" alt="Soft Glam">
+            <div class="gallery-overlay"><p>Soft Glam</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1582.jpg">
+                <img src="Slike/IMG_1582.jpg" alt="Eyeliner">
+            <div class="gallery-overlay"><p>Eyeliner</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1652.jpg">
+                <img src="Slike/IMG_1652.jpg" alt="Blended Eyeliner">
+            <div class="gallery-overlay"><p>Blended Eyeliner</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1761.jpg">
+                <img src="Slike/IMG_1761.jpg" alt="Latte Makeup">
+            <div class="gallery-overlay"><p>Latte Makeup</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1768.jpg">
+                <img src="Slike/IMG_1768.jpg" alt="Latte Makeup">
+            <div class="gallery-overlay"><p>Latte Makeup</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_1873.jpg">
+                <img src="Slike/IMG_1873.jpg" alt="Full Glam">
+            <div class="gallery-overlay"><p>Full Glam</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2156.jpg">
+                <img src="Slike/IMG_2156.jpg" alt="Red Lip">
+            <div class="gallery-overlay"><p>Red Lip</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2294.jpg">
+                <img src="Slike/IMG_2294.jpg" alt="Cat Eye">
+            <div class="gallery-overlay"><p>Cat Eye</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2388.jpg">
+                <img src="Slike/IMG_2388.jpg" alt="Bridal">
+            <div class="gallery-overlay"><p>Bridal</p></div>
+        </div>
+            <div class="gallery-item fade-in" data-lightbox="Slike/IMG_2415.jpg">
+                <img src="Slike/IMG_2415.jpg" alt="Bridal">
+            <div class="gallery-overlay"><p>Bridal</p></div>
+        </div>
+    </div>
 
         /* Contact Section */
         .contact-grid {
@@ -636,6 +649,84 @@
                 height: 35px;
             }
         }
+        /* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+.lightbox.active img {
+    transform: scale(1);
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;
+}
+.lightbox-close:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 40px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+.lightbox-nav:hover {
+    background: rgba(212, 175, 122, 0.8);
+}
+.lightbox-prev { left: 25px; }
+.lightbox-next { right: 25px; }
+
+/* Kursor za klikabilne slike */
+.gallery-item, .cert-card { cursor: pointer; }
+
+@media (max-width: 768px) {
+    .lightbox { padding: 15px; }
+    .lightbox-close { top: 10px; right: 15px; font-size: 32px; }
+    .lightbox-nav { width: 42px; height: 42px; font-size: 28px; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+}
     </style>
 </head>
 <body>
@@ -685,30 +776,26 @@
             <!-- Certifications - Enhanced Section -->
             <div class="certifications-section fade-in">
                 <div class="certs-header">
-                    <h3>Moji sertifikati</h3>
+                    <h3>Sertifikati</h3>
                     <p>Profesionalna priznanja koja garantuju vrhunski kvalitet usluge</p>
                 </div>
                 <div class="certs-grid">
-                    <div class="cert-card">
-                        <div class="cert-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <img src="Slike/Sertifikat1.jpeg" alt="Bridal Makeup Certification">
-                        <div class="cert-info">
-                            <h3>Bridal Makeup Master</h3>
-                            <p>Specijalizacija za venčanja i svečane prilike - sertifikovani ekspert za savršen izgled mlade</p>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <img src="Slike/Sertifikat2.jpeg" alt="Professional Makeup Certification">
-                        <div class="cert-info">
-                            <h3>Professional Makeup Artist</h3>
-                            <p>Napredne tehnike profesionalnog šminkanja i vrhunski pristup svakom klijentu</p>
-                        </div>
-                    </div>
+                   <div class="cert-card" data-lightbox="Slike/Sertifikat1.jpeg">
+    <div class="cert-icon"><i class="fas fa-gem"></i></div>
+    <img src="Slike/Sertifikat1.jpeg" alt="Bridal Makeup Certification">
+    <div class="cert-info">
+        <h3>Bridal Makeup Master</h3>
+        <p>Specijalizacija za venčanja i svečane prilike - sertifikovani ekspert za savršen izgled mlade</p>
+    </div>
+</div>
+<div class="cert-card" data-lightbox="Slike/Sertifikat2.jpeg">
+    <div class="cert-icon"><i class="fas fa-star"></i></div>
+    <img src="Slike/Sertifikat2.jpeg" alt="Professional Makeup Certification">
+    <div class="cert-info">
+        <h3>Professional Makeup Artist</h3>
+        <p>Napredne tehnike profesionalnog šminkanja i vrhunski pristup svakom klijentu</p>
+    </div>
+</div>
                 </div>
             </div>
 
@@ -913,6 +1000,70 @@
                 }
             });
         });
+        <!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Zatvori">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Prethodna">&#10094;</button>
+    <img src="" alt="" id="lightboxImg">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Sledeća">&#10095;</button>
+</div>
+        // ===== Lightbox =====
+(function() {
+    const items = Array.from(document.querySelectorAll('[data-lightbox]'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
+        lightboxImg.alt = items[currentIndex].querySelector('img')?.alt || '';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % items.length;
+        lightboxImg.src = items[currentIndex].getAttribute('data-lightbox');
+    }
+
+    items.forEach((item, i) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            openLightbox(i);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+    // Klik na pozadinu zatvara
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Tastatura
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+    });
+})();
     </script>
 </body>
 </html>
